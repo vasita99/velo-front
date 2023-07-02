@@ -306,7 +306,7 @@ export default {
       }
       console.log(this.form);
       await axios
-        .post("http://localhost:8080/register", this.form)
+        .post("https://vendor-valley.onrender.com/register", this.form)
         .then((resp) => {
           console.log(resp.data);
           router.push("/login");
