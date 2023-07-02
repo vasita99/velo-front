@@ -1,27 +1,38 @@
 <template>
-<div class="text-center">
-    <h1>Login Page</h1>
-</div>
-<form class="form-signin d-flex flex-column" @submit.prevent="login()">
+
+
+<form class="form-signin d-flex flex-column rounded shadow p-3 mb-5 bg-white mt-4" @submit.prevent="login()">
+
+    <div class="text-center">
+      <h2>Login</h2>
+    </div>
  
      
-      <label for="inputEmail" class="sr-only">Email address</label>
+    <div>
+      <label for="inputEmail" class="sr-only">Email</label>
       <input type="email" id="inputEmail" class="form-control" placeholder="Email address" v-model="form.email" required autofocus>
+    </div>
+
+    <div>
+
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" class="form-control"  v-model="form.password" placeholder="Password" required >
+    </div>
+    
+    
+    <div class="mb-2">
+        <router-link to="/forgotpassword">
+          <a><small>Forgot password?</small></a>
+        </router-link>
+    </div>
 
-      <div class="mb-2">
-          <router-link to="/forgotpassword">
-            <a><small>Forgot password?</small></a>
-          </router-link>
-        </div>
-
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-     
-  
+    <div>
+      <button class="w-100 btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </div>
 
     <p class="text-danger">{{msg}}</p>
   </form>
+
 </template>
 
 <script>
@@ -65,17 +76,19 @@ export default{
 }
 </script>
 
-<style>
+<style scoped>
 html,
 body {
   height: 100%;
 }
+
 
 .form-signin {
   width: 100%;
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
+  gap: 10px;
 }
 .form-signin .checkbox {
   font-weight: 400;

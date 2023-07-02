@@ -1,11 +1,14 @@
 <template>
-  <div class="text-center">
-    <h1>Register Page</h1>
-  </div>
+ 
 
 
 
-  <form class="form-signin d-flex flex-column" @submit.prevent="signup()">
+<form class="form-signin d-flex flex-column rounded shadow p-3 mb-5 bg-white mt-4" @submit.prevent="signup()">
+    <div class="text-center">
+      <h2>Register</h2>
+    </div>
+
+    <div>
 
     <label for="firstname" class="sr-only">First name</label>
     <input
@@ -17,7 +20,10 @@
       required
       autofocus
     />
+  </div>
 
+
+    <div>
     <label for="lastname" class="sr-only">Last name</label>
     <input
       type="text"
@@ -28,6 +34,9 @@
       required
       autofocus
     />
+  </div>
+
+  <div>
 
     <label for="inputEmail" class="sr-only">Email</label>
     <input
@@ -39,7 +48,11 @@
       required
       autofocus
     />
+  </div>
 
+
+  <div>
+ 
     <label for="inputMobile" class="sr-only">Mobile number</label>
     <input
       type="text"
@@ -50,6 +63,10 @@
       required
       autofocus
     />
+       
+  </div>
+
+  <div>
 
     <label for="Street" class="sr-only">Street</label>
     <input
@@ -61,7 +78,10 @@
       required
       autofocus
     />
+  </div>
 
+
+  <div>
     <label for="City" class="sr-only">City</label>
     <input
       type="text"
@@ -72,7 +92,11 @@
       required
       autofocus
     />
+  </div>
 
+
+
+  <div>
     <label for="Province" class="sr-only">Province</label>
     <input
       type="text"
@@ -83,7 +107,10 @@
       required
       autofocus
     />
+  </div>
 
+
+  <div>
     <label for="Country" class="sr-only">Country</label>
     <input
       type="text"
@@ -94,6 +121,8 @@
       required
       autofocus
     />
+  </div>
+
 
     <div class="d-flex align-items-center justify-content-between">
       <div>Are you a admin?</div>
@@ -107,120 +136,151 @@
       </div>
     </div>
 
-    <div v-if="isAdmin">
-      <label for="Company" class="sr-only">Company</label>
-      <input
-        type="text"
-        id="Company"
-        class="form-control"
-        placeholder="Company Name"
-        v-model="form.company_name"
-        required
-        autofocus
-      />
+  
+    <div v-if="isAdmin" class="d-flex flex-column form-signin-extend">
+      <div>
+        <label for="Company" class="sr-only">Company</label>
+        <input
+          type="text"
+          id="Company"
+          class="form-control"
+          placeholder="Company Name"
+          v-model="form.company_name"
+          required
+          autofocus
+        />
+      </div>
 
-      <label for="CompanyRole" class="sr-only">Company role</label>
-      <input
-        type="text"
-        id="CompanyRole"
-        class="form-control"
-        placeholder="Company Role"
-        v-model="form.user_role"
-        required
-        autofocus
-      />
+      <div>
 
-      <label for="CompanyId" class="sr-only">Company Id</label>
-      <input
-        type="text"
-        id="CompanyId"
-        class="form-control"
-        placeholder="Company Id"
-        v-model="form.company_registration_number"
-        required
-        autofocus
-      />
+        <label for="CompanyRole" class="sr-only">Company role</label>
+        <input
+          type="text"
+          id="CompanyRole"
+          class="form-control"
+          placeholder="Company Role"
+          v-model="form.user_role"
+          required
+          autofocus
+        />
+      </div>
 
-      <label for="CompanyEmail" class="sr-only">Company Email</label>
-      <input
-        type="email"
-        id="CompanyEmail"
-        class="form-control"
-        placeholder="Company Email"
-        v-model="form.company_email"
-        required
-        autofocus
-      />
+      <div>
 
-      <label for="CompanyMobile" class="sr-only">Company Mobile</label>
-      <input
-        type="text"
-        id="CompanyMobile"
-        class="form-control"
-        placeholder="Company Mobile"
-        v-model="form.company_mobile"
-        required
-        autofocus
-      />
+        <label for="CompanyId" class="sr-only">Company Id</label>
+        <input
+          type="text"
+          id="CompanyId"
+          class="form-control"
+          placeholder="Company Id"
+          v-model="form.company_registration_number"
+          required
+          autofocus
+        />
+      </div>
 
-      <label for="CompanyStreet" class="sr-only">Company Street</label>
-      <input
-        type="text"
-        id="CompanyStreet"
-        class="form-control"
-        placeholder="Company Street"
-        v-model="form.company_street"
-        required
-        autofocus
-      />
+      <div>
+        <label for="CompanyEmail" class="sr-only">Company Email</label>
+        <input
+          type="email"
+          id="CompanyEmail"
+          class="form-control"
+          placeholder="Company Email"
+          v-model="form.company_email"
+          required
+          autofocus
+        />
+      </div>
 
-      <label for="CompanyCity" class="sr-only">Company City</label>
-      <input
-        type="text"
-        id="CompanyCity"
-        class="form-control"
-        placeholder="Company city"
-        v-model="form.company_city"
-        required
-        autofocus
-      />
+      <div>
+        <label for="CompanyMobile" class="sr-only">Company Mobile</label>
+        <input
+          type="text"
+          id="CompanyMobile"
+          class="form-control"
+          placeholder="Company Mobile"
+          v-model="form.company_mobile"
+          required
+          autofocus
+        />
+      </div>
 
-      <label for="CompanyProvince" class="sr-only">Company Province</label>
-      <input
-        type="text"
-        id="inputEmail"
-        class="form-control"
-        placeholder="Company Province"
-        v-model="form.company_province"
-        required
-        autofocus
-      />
 
-      <label for="CompanyCountry" class="sr-only">Company Country</label>
+      <div>
+        <label for="CompanyStreet" class="sr-only">Company Street</label>
+        <input
+          type="text"
+          id="CompanyStreet"
+          class="form-control"
+          placeholder="Company Street"
+          v-model="form.company_street"
+          required
+          autofocus
+        />
+      </div>
+
+      <div>
+        <label for="CompanyCity" class="sr-only">Company City</label>
+        <input
+          type="text"
+          id="CompanyCity"
+          class="form-control"
+          placeholder="Company city"
+          v-model="form.company_city"
+          required
+          autofocus
+        />
+      </div>
+
+
+      <div>
+        <label for="CompanyProvince" class="sr-only">Company Province</label>
+        <input
+          type="text"
+          id="inputEmail"
+          class="form-control"
+          placeholder="Company Province"
+          v-model="form.company_province"
+          required
+          autofocus
+        />
+      </div>
+
+
+      <div>
+        <label for="CompanyCountry" class="sr-only">Company Country</label>
+        <input
+          type="text"
+          id="Company Country"
+          class="form-control"
+          placeholder="Company Country"
+          v-model="form.company_country"
+          required
+          autofocus
+        />
+      </div>
+    </div>
+
+
+    <div>
+      <label for="inputPassword" class="sr-only">Password</label>
       <input
-        type="text"
-        id="Company Country"
+        type="password"
+        id="inputPassword"
         class="form-control"
-        placeholder="Company Country"
-        v-model="form.company_country"
+        placeholder="Password"
+        v-model="form.password"
         required
-        autofocus
       />
     </div>
 
-    <label for="inputPassword" class="sr-only">Password</label>
-    <input
-      type="password"
-      id="inputPassword"
-      class="form-control"
-      placeholder="Password"
-      v-model="form.password"
-      required
-    />
+    <div>
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit">
-      Sign up
-    </button>
+      <button class="w-100 btn btn-lg btn-primary btn-block" type="submit">
+        Sign up
+      </button>
+
+    </div>
 
     <p class="text-danger">{{ msg }}</p>
   </form>
@@ -331,10 +391,12 @@ body {
 }
 
 .form-signin {
+  gap: 20px;
   width: 100%;
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
+  margin-bottom: 50px !important;
 }
 .form-signin .checkbox {
   font-weight: 400;
@@ -358,5 +420,10 @@ body {
   margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+
+.form-signin-extend{
+  gap: 20px;
 }
 </style>

@@ -1,11 +1,13 @@
 <template>
-<div class="form-signin d-flex flex-column" >
- 
-      <label for="inputPassword" class="sr-only">Enter new password</label>
+<form class="form-signin d-flex flex-column rounded shadow p-3 mb-5 bg-white mt-4" @submit.prevent="changePassword()">
+  <div class="text-center">
+      <h6>Enter new password</h6>
+    </div>
+     
       <input type="password" id="inputPassword" class="form-control"  v-model="form.password" placeholder="Password" required >
-      <button class="btn btn-lg btn-primary btn-block" v-on:click="changePassword()">Submit</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
 
-</div>
+  </form>
 </template>
 
 

@@ -1,8 +1,9 @@
 <template>
-<div class="form-signin d-flex flex-column" >
-    <p>{{msg}}</p>
- 
-      <label for="inputCode" class="sr-only">Enter verification code</label>
+<div class="form-signin d-flex flex-column rounded shadow p-3 mb-5 bg-white mt-4" >
+  <div class="text-center">
+      <h6>{{msg}}</h6>
+    </div>
+     
       <input type="text" id="inputCode" class="form-control"  v-model="form.code" placeholder="code" required >
       <button class="btn btn-lg btn-primary btn-block" v-on:click="checkCode()">Verify</button>
 

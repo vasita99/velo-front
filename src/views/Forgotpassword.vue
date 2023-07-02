@@ -1,8 +1,11 @@
 <template>
-<form class="form-signin d-flex flex-column" @submit.prevent="sendmail()">
+<form class="form-signin d-flex flex-column rounded shadow p-3 mb-5 bg-white mt-4" @submit.prevent="sendmail()">
+  <div class="text-center">
+      <h2>Reset password</h2>
+    </div>
  
-      <label for="inputPassword" class="sr-only">Enter registerd email</label>
       <input type="email" id="inputPassword" class="form-control"  v-model="form.email" placeholder="Email" required >
+      <p>Enter registerd email associated with your account</p>
       <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Send mail</button>
 
 </form>
