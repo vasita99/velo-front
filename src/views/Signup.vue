@@ -3,7 +3,10 @@
     <h1>Register Page</h1>
   </div>
 
-  <div class="form-signin d-flex flex-column">
+
+
+  <form class="form-signin d-flex flex-column" @submit.prevent="signup()">
+
     <label for="firstname" class="sr-only">First name</label>
     <input
       type="text"
@@ -215,12 +218,12 @@
       required
     />
 
-    <button class="btn btn-lg btn-primary btn-block" v-on:click="signup()">
+    <button class="btn btn-lg btn-primary btn-block" type="submit">
       Sign up
     </button>
 
     <p class="text-danger">{{ msg }}</p>
-  </div>
+  </form>
 </template>
 
 <script>
@@ -271,9 +274,8 @@ export default {
         company_province: "",
         company_country: "",
         company_email: "",
-        company_mobile: "",
-
-        //             first_name: "John",
+        company_mobile: ""
+        // first_name: "John",
         // last_name: "Doe",
         // mobile: "1234567890",
         // is_vendor: 0,
@@ -299,9 +301,9 @@ export default {
   },
   methods: {
     async signup() {
-      // if(this.isAdmin){
-      //   this.form.is_vendor = 1
-      // }
+      if(this.isAdmin){
+        this.form.is_vendor = 1
+      }
       console.log(this.form);
       await axios
         .post("http://localhost:8080/register", this.form)

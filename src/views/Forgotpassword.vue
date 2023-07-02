@@ -1,11 +1,11 @@
 <template>
-<div class="form-signin d-flex flex-column" >
+<form class="form-signin d-flex flex-column" @submit.prevent="sendmail()">
  
       <label for="inputPassword" class="sr-only">Enter registerd email</label>
       <input type="email" id="inputPassword" class="form-control"  v-model="form.email" placeholder="Email" required >
-      <button class="btn btn-lg btn-primary btn-block" v-on:click="sendmail()">Send mail</button>
+      <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Send mail</button>
 
-</div>
+</form>
 </template>
 
 <script>

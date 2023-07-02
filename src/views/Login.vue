@@ -2,7 +2,7 @@
 <div class="text-center">
     <h1>Login Page</h1>
 </div>
-<div class="form-signin d-flex flex-column" >
+<form class="form-signin d-flex flex-column" @submit.prevent="login()">
  
      
       <label for="inputEmail" class="sr-only">Email address</label>
@@ -16,12 +16,12 @@
           </router-link>
         </div>
 
-      <button class="btn btn-lg btn-primary btn-block" v-on:click="login()">Login</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
      
   
 
     <p class="text-danger">{{msg}}</p>
-</div>
+  </form>
 </template>
 
 <script>
