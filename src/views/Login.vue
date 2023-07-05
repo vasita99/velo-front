@@ -41,7 +41,7 @@ import axios from 'axios'
 
 export default{
     name: 'LoginPage',
-   data(){
+    data(){
         return {
             form: {
                 email: '',
@@ -51,25 +51,20 @@ export default{
         }
     },
     methods: {
-      login(){
-        console.log(this.form);
-   
+      login(){   
         axios.post('https://vendor-valley.onrender.com/login', this.form)
-  .then((resp) => {
+          .then(() => {
     
-    localStorage.setItem('userID', this.form.email);
-    localStorage.setItem('password', this.form.password);
-    this.msg = ""
-    alert('success',resp.data);
-  })
-  .catch((error) => {
-    console.error("error", error);
-  this.msg = "Invalid email or password"
-
-  });
+            localStorage.setItem('userID', this.form.email);
+            localStorage.setItem('password', this.form.password);
+            this.msg = ""
+            this.$toast.success(`Login sucessful`, {position:"top", duration: 1000, });
+          })
+          .catch((error) => {
+            this.msg = error.response.data
+          });
       }
     },
-
     mounted() {
        this.msg = ''
     }

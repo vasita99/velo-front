@@ -1,127 +1,120 @@
 <template>
- 
 
-
-
-<form class="form-signin d-flex flex-column rounded shadow p-3 mb-5 bg-white mt-4" @submit.prevent="signup()">
+<form class="form-signin d-flex flex-column rounded shadow p-3 bg-white mt-4" @submit.prevent="signup()">
     <div class="text-center">
       <h2>Register</h2>
     </div>
 
     <div>
-
-    <label for="firstname" class="sr-only">First name</label>
-    <input
-      type="text"
-      id="firstname"
-      class="form-control"
-      placeholder="First name"
-      v-model="form.first_name"
-      required
-      autofocus
-    />
-  </div>
+      <label for="firstname" class="sr-only">First name</label>
+      <input
+        type="text"
+        id="firstname"
+        class="form-control"
+        placeholder="First name"
+        v-model="form.first_name"
+        required
+        autofocus
+      />
+    </div>
 
 
     <div>
-    <label for="lastname" class="sr-only">Last name</label>
-    <input
-      type="text"
-      id="lastname"
-      class="form-control"
-      placeholder="Last name"
-      v-model="form.last_name"
-      required
-      autofocus
-    />
-  </div>
+      <label for="lastname" class="sr-only">Last name</label>
+      <input
+        type="text"
+        id="lastname"
+        class="form-control"
+        placeholder="Last name"
+        v-model="form.last_name"
+        required
+        autofocus
+      />
+    </div>
 
-  <div>
+    <div>
 
-    <label for="inputEmail" class="sr-only">Email</label>
-    <input
-      type="email"
-      id="inputEmail"
-      class="form-control"
-      placeholder="Email address"
-      v-model="form.email"
-      required
-      autofocus
-    />
-  </div>
-
-
-  <div>
- 
-    <label for="inputMobile" class="sr-only">Mobile number</label>
-    <input
-      type="text"
-      id="inputMobile"
-      class="form-control"
-      placeholder="Mobile number"
-      v-model="form.mobile"
-      required
-      autofocus
-    />
-       
-  </div>
-
-  <div>
-
-    <label for="Street" class="sr-only">Street</label>
-    <input
-      type="text"
-      id="Street"
-      class="form-control"
-      placeholder="Street"
-      v-model="form.street"
-      required
-      autofocus
-    />
-  </div>
+      <label for="inputEmail" class="sr-only">Email</label>
+      <input
+        type="email"
+        id="inputEmail"
+        class="form-control"
+        placeholder="Email address"
+        v-model="form.email"
+        required
+        autofocus
+      />
+    </div>
 
 
-  <div>
-    <label for="City" class="sr-only">City</label>
-    <input
-      type="text"
-      id="City"
-      class="form-control"
-      placeholder="City"
-      v-model="form.city"
-      required
-      autofocus
-    />
-  </div>
+    <div>
+      <label for="inputMobile" class="sr-only">Mobile number</label>
+      <input
+        type="text"
+        id="inputMobile"
+        class="form-control"
+        placeholder="Mobile number"
+        v-model="form.mobile"
+        required
+        autofocus
+      />
+    </div>
+
+    <div>
+      <label for="Street" class="sr-only">Street</label>
+      <input
+        type="text"
+        id="Street"
+        class="form-control"
+        placeholder="Street"
+        v-model="form.street"
+        required
+        autofocus
+      />
+    </div>
+
+
+    <div>
+      <label for="City" class="sr-only">City</label>
+      <input
+        type="text"
+        id="City"
+        class="form-control"
+        placeholder="City"
+        v-model="form.city"
+        required
+        autofocus
+      />
+    </div>
 
 
 
-  <div>
-    <label for="Province" class="sr-only">Province</label>
-    <input
-      type="text"
-      id="Province"
-      class="form-control"
-      placeholder="Province"
-      v-model="form.province"
-      required
-      autofocus
-    />
-  </div>
+    <div>
+      <label for="Province" class="sr-only">Province</label>
+      <input
+        type="text"
+        id="Province"
+        class="form-control"
+        placeholder="Province"
+        v-model="form.province"
+        required
+        autofocus
+      />
+    </div>
 
 
-  <div>
-    <label for="Country" class="sr-only">Country</label>
-    <input
-      type="text"
-      id="Country"
-      class="form-control"
-      placeholder="Country"
-      v-model="form.country"
-      required
-      autofocus
-    />
-  </div>
+    <div>
+      <label for="Country" class="sr-only">Country</label>
+      <input
+        type="text"
+        id="Country"
+        class="form-control"
+        placeholder="Country"
+        v-model="form.country"
+        required
+        autofocus
+      />
+    </div>
 
 
     <div class="d-flex align-items-center justify-content-between">
@@ -291,25 +284,6 @@ import router from "@/router";
 import axios from "axios";
 import { ElSwitch } from "element-plus";
 
-// "first_name": "John",
-// "last_name": "Doe",
-// "mobile": "1234567890",
-// "is_vendor": 0,
-// "street": "123 Main St",
-// "city": "Springfield",
-// "province": "IL",
-// "country": "USA",
-// "email": "johndoe.doe@email.com",
-// "password": "password123",
-// "user_role": "Manager",
-// "company_name": "xyz Sol",
-// "company_registration_number": "116",
-// "company_street": "11-35/6",
-// "company_city": "Halifax",
-// "company_province": "NS",
-// "company_country": "Ca",
-// "company_email": "xyz@sol.com",
-// "company_mobile": "7412358960"
 export default {
   name: "signUp",
   components: { ElSwitch },
@@ -335,25 +309,6 @@ export default {
         company_country: "",
         company_email: "",
         company_mobile: ""
-        // first_name: "John",
-        // last_name: "Doe",
-        // mobile: "1234567890",
-        // is_vendor: 0,
-        // street: "123 Main St",
-        // city: "Springfield",
-        // province: "IL",
-        // country: "USA",
-        // email: "johndoe.doe@email.com",
-        // password: "password123",
-        // user_role: "Manager",
-        // company_name: "xyz Sol",
-        // company_registration_number: "116",
-        // company_street: "11-35/6",
-        // company_city: "Halifax",
-        // company_province: "NS",
-        // company_country: "Ca",
-        // company_email: "xyz@sol.com",
-        // company_mobile: "7412358960"
       },
       msg: "",
       isAdmin: false,
@@ -364,15 +319,14 @@ export default {
       if(this.isAdmin){
         this.form.is_vendor = 1
       }
-      console.log(this.form);
       await axios
         .post("https://vendor-valley.onrender.com/register", this.form)
-        .then((resp) => {
-          console.log(resp.data);
+        .then(() => {
+          this.msg = ""
+          this.$toast.success('Singup successful', {position:"top", duration: 1000 });
           router.push("/login");
         })
         .catch((error) => {
-          console.error("error", error.response);
           this.msg = error.response.data;
         });
     },

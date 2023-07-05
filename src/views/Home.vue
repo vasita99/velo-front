@@ -123,8 +123,9 @@ export default {
 
   mounted() {
     axios.get("https://vendor-valley.onrender.com/").then((response) => {
-      console.log(response);
       this.homepage = response.data;
+    }).catch((error)=>{
+      console.log(error.response.data);
     });
   },
 };
@@ -137,6 +138,9 @@ export default {
   background-color: #ebeef6;
 }
 
+img:hover{
+  cursor: pointer;
+}
 .d-flex{
   gap:20px;
 }

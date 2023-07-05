@@ -1,13 +1,13 @@
 <template>
 <form class="form-signin d-flex flex-column rounded shadow p-3 mb-5 bg-white mt-4" @submit.prevent="sendmail()">
-  <div class="text-center">
+    <div class="text-center">
       <h2>Reset password</h2>
     </div>
  
-      <input type="email" id="inputPassword" class="form-control"  v-model="form.email" placeholder="Email" required >
       <p>Enter registerd email associated with your account</p>
+      <input type="email" id="inputPassword" class="form-control"  v-model="form.email" placeholder="Email" required>
       <button class="btn btn-lg btn-primary btn-block mt-2" type="submit">Send mail</button>
-
+      <p class="text-danger">{{ msg }}</p>
 </form>
 </template>
 
@@ -23,15 +23,18 @@ export default{
             form: {
                 email: '',
             },
+            msg: '',
         }
     },
     methods: {
       async sendmail(){
-        await axios.post('https://vendor-valley.onrender.com/forgotPassword', this.form).then((res)=>{
+        await axios.post('https://vendor-valley.onrender.com/forgotPassword', this.form).then(()=>{
           localStorage.setItem('userEmail', this.form.email)
-          console.log(res);
+          this.$toast.info('mail sent', {duration: 1000, position: "top"})
+          router.push('/Enterverificationcode')
+        }).catch((error)=>{
+          this.msg  = error.response.data
         })
-        router.push('/Enterverificationcode')
       }
     },
 

@@ -6,6 +6,7 @@
      
       <input type="password" id="inputPassword" class="form-control"  v-model="form.password" placeholder="Password" required >
       <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+      <p class="text-danger">{{ msg }}</p>
 
   </form>
 </template>
@@ -13,6 +14,7 @@
 
 <script>
 import axios from 'axios'
+import router from '@/router'
 
 export default{
     name: 'resetPassword',
@@ -31,15 +33,18 @@ export default{
         // updatePassword
         this.form.email = localStorage.getItem('userEmail')
         await axios.post('https://vendor-valley.onrender.com/updatePassword', this.form)
-        .then((res)=>{
-          alert(res)
+        .then(()=>{
+          this.$toast.success('Password changed', {duration: 1000, position: "top"})
+          router.push('/login');
+        }).catch((error)=>{
+          this.msg = error.response.data
         })
         
       }
     },
 
     mounted() {
-       
+       this.msg = ''
     }
 }
 </script>

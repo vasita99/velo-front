@@ -1,12 +1,12 @@
 <template>
 <div class="form-signin d-flex flex-column rounded shadow p-3 mb-5 bg-white mt-4" >
   <div class="text-center">
-      <h6>{{msg}}</h6>
+      <h6>Enter the code sent to your email</h6>
     </div>
      
       <input type="text" id="inputCode" class="form-control"  v-model="form.code" placeholder="code" required >
       <button class="btn btn-lg btn-primary btn-block" v-on:click="checkCode()">Verify</button>
-
+      <p class="text-danger">{{ msg }}</p>
     
 </div>
 </template>
@@ -34,13 +34,15 @@ export default{
         await axios.post('https://vendor-valley.onrender.com/verifyConfirmationCode', this.form)
         .then(()=>{
           router.push('/changepassword')
+        }).catch((error)=>{
+          this.msg  = error.response.data
         })
         
       }
     },
 
     mounted() {
-       this.msg = 'Enter the code sent to your email'
+       this.msg = ''
     }
 }
 </script>
