@@ -114,7 +114,7 @@
 import axios from "axios";
 
 export default {
-  name: "HomePage",
+  name: "Home",
   data() {
     return {
       homepage: "",
@@ -131,7 +131,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .home{
   height: 100%;
   width: 100%;
