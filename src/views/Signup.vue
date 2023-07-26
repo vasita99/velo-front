@@ -326,8 +326,8 @@
             this.$toast.success('Singup successful', {position:"top", duration: 1000 });
             router.push("/login");
           })
-          .catch((error) => {
-            this.msg = error.response.data;
+          .catch(() => {
+            this.msg = "Invalid input";
           });
       },
     },
